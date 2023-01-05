@@ -284,11 +284,12 @@
 
 .footer {
   line-height: 2;  
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 3rem;
 }
 
 .header {
