@@ -1,17 +1,17 @@
 import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
-import { MapContainer, TileLayer, Marker, Popup, Polyline, CircleMarker } from 'react-leaflet'
 import style from '../../styles/Home.module.css'
 
+import { MapContainer, TileLayer, Marker, Popup, Polyline, CircleMarker } from 'react-leaflet'
+
 export default function Map() {
+    const position = [49.286312103271484, -123.11234283447266]; // waterfront
 
-    const position = [49.28594, -123.11129];
-
-    const blueOption = { color: '#1a73e8' };
-    const pinkOption = { color: '#e838d6' };
+    const blueOption = { color: 'blue' };
+    const pinkOption = { color: '#FF0090' };
     const redOption = { color: 'red' };
-    
+
     const polyline = [
         [49.286312103271484, -123.11234283447266], // waterfront
         [49.2856364, -123.1198152], // burrard
@@ -43,15 +43,12 @@ export default function Map() {
         [49.25367827613695, -122.91868207173422], //production way-university
     ]
 
-
-
     return (
-        <MapContainer className={style.map} center={position} zoom={14} scrollWheelZoom={true}>
+        <MapContainer className={style.map} center={position} zoom={11} scrollWheelZoom={true}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-
             <Marker position={position}>
                 <Popup>
                     Waterfront
@@ -175,13 +172,13 @@ export default function Map() {
                     Production Way-University
                 </Popup>
             </Marker>
-            
+
             <CircleMarker center={polyline[0]} pathOptions={redOption} radius={10}></CircleMarker>
             <CircleMarker center={polyline[19]} pathOptions={redOption} radius={10}></CircleMarker>
             <CircleMarker center={polyline2[4]} pathOptions={redOption} radius={10}></CircleMarker>
             <Polyline pathOptions={blueOption} positions={polyline} />
             <Polyline pathOptions={pinkOption} positions={polyline2} />
-
         </MapContainer>
     )
+
 }
