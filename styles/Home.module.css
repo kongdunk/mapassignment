@@ -283,20 +283,20 @@
 }
 
 .footer {
+  background-color: lightgray;
   line-height: 2;  
   font-size: 1.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 3rem;
+  padding: 3rem;
 }
 
 .header {
-  background-color: blue;
-  color: white;
-  font-size: 6rem;
-  height: 9rem;
+  background-color: gray;
+  font-size: 5rem;
+  padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
